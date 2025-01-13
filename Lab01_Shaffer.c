@@ -15,6 +15,5 @@ int main(){
 
     // Iterate in reverse order through the array and print each character
 
-   
     return 0;
 }
