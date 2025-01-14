@@ -19,7 +19,7 @@ int main()
     fgets(str, sizeof(str), stdin);
 
     // Sets len to length of string
-    len = strlen(str);
+    len = strlen(str) -1;
 
     // Replace new line with null
     if(str[len] == '\n'){
