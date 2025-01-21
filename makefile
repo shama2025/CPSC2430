@@ -11,5 +11,5 @@ compile:
 		exit 1; \
 	fi
 	@echo "Compiling $(FILE)..."
-	@$(eval OUTPUT=$(basename $(FILE)).elf)
+	@$(eval OUTPUT=$(basename $(FILE)))
 	@gcc -o $(OUTPUT) $(FILE)
