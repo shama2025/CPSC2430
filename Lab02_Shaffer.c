@@ -21,12 +21,17 @@ int main(int argc, char * argv[]) {
     /**
      * Handles the exception if there are not enough files
      */
-
+    printf("Not enough parameters!\n");
     exit(1);
   }
 
+  if((fp = fopen(argv[1], "r")) == NULL){
+    printf("Error opening file!\n");
+    exit(-1);
+  }
+
   // Opens the file and gives it read access
-  fp = fopen(argv[1], "r");
+  ;
 
   while (!feof(fp)) { // Iterates until end of filr
 
