@@ -15,7 +15,7 @@
 int main(int argc, char *argv[])
 {
   FILE *fp;              // File pointer
-  char string[STR_SIZE]; // String
+  char line[STR_SIZE]; // Line read from file
 
   if (argc != 2)
   { // Checks if there are enough parameters passed through cli
@@ -34,16 +34,16 @@ int main(int argc, char *argv[])
   while (!feof(fp))
   { // Iterates until end of filr
 
-    fgets(string, STR_SIZE, fp); // Reads one line of the file
+    fgets(line, STR_SIZE, fp); // Reads one line of the file
 
-    for (int i = 0; i < strlen(string); i++)
-    { // Iterates through string
+    for (int i = 0; i < strlen(line); i++)
+    { // Iterates through line
 
-      if (string[i] == '{' || string[i] == '}' || string[i] == '(' || string[i] == ')')
+      if (line[i] == '{' || line[i] == '}' || line[i] == '(' || line[i] == ')')
       { // Checks if character meets conditin
 
-        // Prints the character of the string
-        printf("%c", string[i]);
+        // Prints the character of the line
+        printf("%c", line[i]);
       }
     }
   }
