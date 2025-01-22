@@ -12,34 +12,35 @@
 #include <stdlib.h>
 #define STR_SIZE 256
 
-int main(int argc, char * argv[]) {
-  FILE * fp; // File pointer
+int main(int argc, char *argv[])
+{
+  FILE *fp;              // File pointer
   char string[STR_SIZE]; // String
 
-  if (argc != 2) {
-
-    /**
-     * Handles the exception if there are not enough files
-     */
+  if (argc != 2)
+  { // Checks if there are enough parameters passed through cli
     printf("Not enough parameters!\n");
     exit(1);
   }
 
-  if((fp = fopen(argv[1], "r")) == NULL){
+  if ((fp = fopen(argv[1], "r")) == NULL)
+  { // Checks if the file can be opened
     printf("Error opening file!\n");
     exit(-1);
   }
 
   // Opens the file and gives it read access
-  ;
 
-  while (!feof(fp)) { // Iterates until end of filr
+  while (!feof(fp))
+  { // Iterates until end of filr
 
     fgets(string, STR_SIZE, fp); // Reads one line of the file
 
-    for (int i = 0; i < strlen(string); i++) { // Iterates through string
+    for (int i = 0; i < strlen(string); i++)
+    { // Iterates through string
 
-      if (string[i] == '{' || string[i] == '}' || string[i] == '(' || string[i] == ')') { // Checks if character meets conditin
+      if (string[i] == '{' || string[i] == '}' || string[i] == '(' || string[i] == ')')
+      { // Checks if character meets conditin
 
         // Prints the character of the string
         printf("%c", string[i]);
