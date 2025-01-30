@@ -101,7 +101,7 @@ int main(int argc, char *argv[])
     }
 
     FILE *input;                  // File pointer
-    input = fopen(argv[1], "r");  // Reading the file
+    input = fopen(argv[1], "rb");  // Reading the file
     char file_contents[MAX_SIZE]; // Content of file
     char delim[] = " ";           // Delimiter used for tokenization
     char *token;                  // Token  for delimitting
@@ -129,8 +129,10 @@ int main(int argc, char *argv[])
             }
         }
 
+        file_contents[counter] = '\0';
+
         // Read the file_contents array
-        token = strtok(file_contents, delim) + '\0';
+        token = strtok(file_contents, delim);
 
         while (token != NULL)
         {
