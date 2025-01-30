@@ -1,4 +1,6 @@
 /**
+ * @author Marcus Shaffer
+ * @date 1/28/2025
  * @brief Read a file and return its following grammer
  * @param argc Number of argumenst passed
  * @param argv Array of arguments passed
@@ -100,7 +102,7 @@ int main(int argc, char *argv[])
 
     if (input)
     {
-        char file_char;     // Onew character in the input
+        char file_char;     // One character in the input
         size_t counter = 0; // Index of array
 
         // While the file hasn't reached the end make the file one line
