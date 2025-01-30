@@ -128,7 +128,7 @@ int main(int argc, char *argv[])
                 file_contents[counter++] = file_char;
             }
         }
-
+        // Ends file_contents with NULL to reduce reading extra elements
         file_contents[counter] = '\0';
 
         // Read the file_contents array
