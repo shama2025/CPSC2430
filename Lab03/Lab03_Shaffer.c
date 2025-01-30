@@ -40,7 +40,9 @@ bool isSeparator(char inputStr)
  */
 bool isKeyword(char *token)
 {
-    if ((strcmp(token, "main") == 0) || (strcmp(token, "for") == 0) || (strcmp(token, "while") == 0) || (strcmp(token, "if") == 0) || (strcmp(token, "void") == 0) || (strcmp(token, "return") == 0))
+    if ((strcmp(token, "main") == 0) || (strcmp(token, "for") == 0) ||
+        (strcmp(token, "while") == 0) || (strcmp(token, "if") == 0) ||
+        (strcmp(token, "void") == 0) || (strcmp(token, "return") == 0))
     {
         return true;
     }
@@ -57,7 +59,10 @@ bool isKeyword(char *token)
  */
 bool isOperator(char token)
 {
-    if (token == '+' || token == '-' || token == '*' || token == '/' || token == '=' || token == '>' || token == '<')
+    if (token == '+' || token == '-' ||
+        token == '*' || token == '/' ||
+        token == '=' || token == '>' ||
+        token == '<')
     {
         return true;
     }
@@ -69,12 +74,13 @@ bool isOperator(char token)
 
 /**
  * @brief Checks if token is Data Type
- * @param token 
- * @return 
+ * @param token
+ * @return
  */
 bool isData_Type(char *token)
 {
-    if ((strcmp(token, "int") == 0) || (strcmp(token, "float") == 0) || (strcmp(token, "char") == 0) || (strcmp(token, "double") == 0))
+    if ((strcmp(token, "int") == 0) || (strcmp(token, "float") == 0) ||
+        (strcmp(token, "char") == 0) || (strcmp(token, "double") == 0))
     {
         return true;
     }
