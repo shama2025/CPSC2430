@@ -8,7 +8,7 @@
     These series of functions take two integers and check if
     they are between 0 an 9 and then output the solution as a string
 *)
-(*This function checks if two numbers are between 0 and 9*)
+(*This function checks if one number is between 0 and 9*)
 fun checkBetween0and9(a) = let fun isBetween0an9 n = n>= 0 andalso n <= 9 in isBetween0an9 a end;
 
 (*This function takes the quotient and maps it to a string value*)
@@ -25,12 +25,13 @@ fun mapToString (quotient) =
         8 => " eight" |
         9 => " nine";
 (*This function divides two integers and concatenates the "The answer is" string to the mapped string*)
-fun mydiv(a,b) = if checkBetween0and9(a div b) then "The answer is" ^ mapToString(a div b) else "Error: Numbers not between 0 and 9";
+fun mydiv(a,b) = if checkBetween0and9(a div b) then "The answer is" ^ mapToString(a div b) else "Error: Quotient not between 0 and 9";
 
 (*Problem 2
     This function will check the number of elements in a list and apply a
     function across the list. If there are 3 >= elements, then first three elements, multiply each of them by 5, add them together
     if there are 3 < elements, each element is multitplied by 10 and then added
+    if there are no elements then the value is 0
 *)
 
 (*This function will use pattern matching to single out 2 element list (Then multiply values by 10 and then add them together)
