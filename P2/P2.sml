@@ -20,12 +20,12 @@ fun partition1(_, nil) = ([], [])
       end;
 
 (*
-This function removes the pivot to allow cleaner sorting
+This function removes the first pivot instance to allow cleaner sorting
 Returns list (without the pivot value)
 *)
 fun remove_pivot(_, []) = []
   | remove_pivot(pivot, first::rest) =
-      if first = pivot then remove_pivot(pivot,rest)
+      if first = pivot then rest
       else first :: remove_pivot(pivot, rest);
 
 (*
@@ -58,7 +58,7 @@ fun partition2 (cmp, pivot, nil) = ([], [])
       in
         if cmp(first, pivot) then (first::less, greater)
         else (less, first::greater)
-      end
+      end;
 
 (*
 Implements quicksort using an operator function
@@ -66,12 +66,12 @@ Implements quicksort using an operator function
 - Pivot calculated by finding middle element
 - filtered_list: removes pivot element in list
 *)
-fun quicksort2(cmp, nil) = ([])
-  | quicksort2(cmp,list) =
+fun quicksort2(nil,cmp) = []
+  | quicksort2(list,cmp) =
       let
         val pivot = List.nth(list, length list div 2)
         val filtered_list = remove_pivot(pivot,list)
         val (less, greater) = partition2(cmp,pivot,filtered_list)
       in
-        quicksort2(greater)  @ [pivot] @ quicksort2(less)
+         quicksort2(less,cmp) @ [pivot] @ quicksort2(greater,cmp)
       end;
